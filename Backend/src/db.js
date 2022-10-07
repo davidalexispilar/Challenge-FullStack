@@ -92,8 +92,10 @@ let clients = [{
 ]
 if (saveDb) {
     consultTransfers =  fs.readFileSync('./src/transfers.json', 'utf-8')
-    consultTransfers =JSON.parse(consultTransfers)
-    console.log('trnasferencias',consultTransfers);
+    if (consultTransfers) {
+        
+        consultTransfers =JSON.parse(consultTransfers);
+    }
 }
 
 module.exports = {

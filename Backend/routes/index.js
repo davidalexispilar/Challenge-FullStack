@@ -8,7 +8,16 @@ router.get('/accountsLogin', (req, res) => {
   let client = db.clients.filter((client) => {
     return client.numberClient === req.query.number
   })
-  res.send(client)
+    if (client .length >0) {
+      res.send(
+        {status:200,
+        client:client}) 
+    }else{
+      res.send({
+        status:400,
+        message:"No se ha encontrado ese numero de cliente"
+      })
+    }
 })
 router.get('/account', (req, res) => {
   console.log(req.query.number);

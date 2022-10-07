@@ -5,7 +5,9 @@ let algo
 const generateTransfers = (origin, destination, amount, number) => {
     if (saveDb) {
         fs.readFile('./src/transfers.json', 'utf-8', function (err, doc) {
-            transfers = JSON.parse(doc)
+            if (doc) {
+                transfers = JSON.parse(doc)
+            }
            
             transfers.push(
                 {

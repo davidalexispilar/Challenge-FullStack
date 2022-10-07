@@ -66,9 +66,17 @@ export class AccountsComponent implements OnInit {
   showTransfers() {
     this.http.get(`http://localhost:3000/transfer?number=${this.accounts}`).subscribe((e: any) => {
       if (e.status === 200) {
+        console.log(e.data);
+
+
         this.transfersClient = e.data
-        console.log(this.transfersClient);
-        this.clientBoolean= !this.clientBoolean
+
+        if (this.transfersClient.length > 0) {
+          console.log(this.transfersClient);
+          this.clientBoolean= !this.clientBoolean
+        }else{
+          alert("No hay transferencias echas")
+        }
 
       } else {
         alert(e.message)

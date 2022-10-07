@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -21,15 +21,19 @@ export class LoginComponent implements OnInit {
 
   getAccounts(number: string) {
     if (number != "") {
-
-      this.http.get(`http://localhost:3000/accountsLogin?number=${number}`).subscribe((e) => {
+      this.http.get(`http://localhost:3000/accountsLogin?number=${number}`).subscribe((e:any) => {
+        if (e.status === 200) {
         console.log(e);
 
-        this.accounts ={
-          counts:e ,
-          numberclient:number
+        this.accounts = {
+          counts: e.client,
+          numberclient: number
         }
         console.log(this.accounts);
+        }else{
+          alert("El numero de cliente ingresado no se encuentra")
+          this.numberAccounts =""
+        }
 
         if (this.accounts) {
 
@@ -37,10 +41,10 @@ export class LoginComponent implements OnInit {
         }
       })
 
-    }else{
+    } else {
       alert("Por favor ingrese el numero de cliente")
     }
-    }
   }
+}
 
 
