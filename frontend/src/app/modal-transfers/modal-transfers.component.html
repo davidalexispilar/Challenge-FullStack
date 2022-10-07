@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="containerDiv">
+
+    <div class="display" *ngFor="let client of fiveTransfers">
+
+      <h2>Numero de cliente: {{client.client}}</h2>
+      <div>
+        <h4>Cuenta de origen:{{client.origin}}</h4>
+        <h4>Cuenta de destino:{{client.destination}}</h4>
+      </div>
+      <div>
+        <h5>Monto:{{client.amount}} </h5>
+
+      </div>
+
+    </div>
+
+
+      <button class="button" (click)="exit()">
+        Salir
+      </button>
+
+  </div>
+
+</div>

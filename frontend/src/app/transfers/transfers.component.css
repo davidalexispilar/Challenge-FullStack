@@ -1,0 +1,52 @@
+.container{
+  width: 100%;
+  height: 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.display{
+  max-width: 1024px;
+  border: 3px solid #4AFF49;
+  padding: 5%;
+  text-align: center;
+  border-radius: 5px;
+}
+.display{
+}
+
+.display select option{
+    width: 30%;
+    margin: 0 2% ;
+}
+.account{
+  display: flex;
+}
+.account div{
+  margin: 0 3%;
+  border: 2px solid #4AFF49 ;
+  border-radius: 5px;
+}
+input{
+  width: 100%;
+  margin: 2% 0;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid  #4AFF49 ;
+}
+.button{
+  background-color: #4AFF49;
+  width: 40%;
+  margin: 7% 1%;
+  padding: 3%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.button:hover{
+  background-color: #099909;
+}
+.buttonTwo{
+  width: 100%;
+
+}

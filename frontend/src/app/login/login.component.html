@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="inputs">
+      <h2>Login</h2>
+    <div class="containerInput">
+      <label for="">Numero de cliente</label>
+      <input [(ngModel)]='numberAccounts' placeholder="Ingrese el numero de cliente">
+    </div>
+    <button class="button" (click)="getAccounts(numberAccounts)">Ingresar</button>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<app-login (accountSon)="getAccountsSon($event) " *ngIf="!boolean"></app-login>
+<app-transfers *ngIf="transfer" [accounts]="allAccounts" (accountBoolean)="cancel($event)" ></app-transfers>
+<app-modal *ngIf="modalBoolean"[modal]="modal" (modalBoolean)="exitModal($event)" ></app-modal>
+<div class="container" *ngIf="boolean && !transfer && !modalBoolean && !clientBoolean" >
+  <div class="containerBorder">
+
+    <div class="title">
+      <div>
+
+        <img src="https://assets.ncr.com/content/ncr/us/en/home.coreimg.svg/structure/_jcr_content/root/header/brand/1660952361465/ncr-bb-361-2017-black-shifted.svg" alt="">
+
+      </div>
+    </div>
+    <div class="titleAccounts">
+      <div>
+        <p>Cosulta de saldo</p>
+
+        <h2>Selecciona la cuenta a consultar</h2>
+      </div>
+
+    </div>
+    <div class="accounts">
+      <div class="buttonContainer">
+
+        <div class="buttonOne" *ngFor="let item of accountsLogin">
+          <button  (click)="getAccountClient(accounts,item.numberAccount,item.typeAccount)" >
+            <p>{{item.typeAccount}}</p>
+            <p>Nro:{{item.numberAccount}}</p>
+          </button>
+        </div>
+        <div class="buttonOne buttonOptions">
+          <button (click)="moreOptions(options)"   >
+            <p>Mas Opciones</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="border" >
+      <button class="button" (click)="exit()" >Salir</button>
+      <button class="button" (click)="showTransfers()">Mostrar transferencia </button>
+      <button class="button" (click)="transfers()" >Hacer una transferencia</button>
+    </div>
+  </div>
+</div>
+
+<app-modal-transfers *ngIf="clientBoolean" [transfers]="transfersClient" (transfersBool)="exitTransfer($event)" ></app-modal-transfers>
+
+
+

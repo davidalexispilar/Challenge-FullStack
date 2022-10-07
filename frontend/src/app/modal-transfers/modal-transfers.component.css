@@ -1,0 +1,41 @@
+.container{
+  width: 100%;
+  height: 768px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerDiv{
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1%;
+  padding: 1%;
+  border: 1px solid grey;
+}
+
+.display{
+width: 20%;
+margin: 2%;
+  border: 3px solid #4AFF49;
+  padding: 1%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.button{
+  background-color: #4AFF49;
+  width: 10%;
+  margin: 0;
+  padding: 1%;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+.button:hover{
+  background-color: #099909;
+}

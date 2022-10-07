@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="display">
+      <h2>Transferencias</h2>
+        <div>
+            <h2>Numero de cliente {{client}}</h2>
+        </div>
+        <div>
+          <label for="">Monto a transferir </label>
+          <input type="number" required [(ngModel)]="amuont">
+        </div>
+        <div class="account">
+
+          <div>
+
+            <h4>Cuenta de origen</h4>
+            <select name="" id="" [(ngModel)]="accountOrigin" (change)="capturar()">
+              <option [value]="account"*ngFor="let account of accountNumber">
+                {{account}}
+              </option>
+
+            </select>
+          </div>
+          <div>
+            <h4>Cuenta de destino</h4>
+            <select name="" id="" [(ngModel)]="accountDestination" (change)="capturar()" >
+              <option [value]="destination"*ngFor="let destination of accountNumber">
+                {{destination}}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="buttonTwo">
+          <button class="button" (click)="postTransfers(accountOrigin,accountDestination)" >Enviar transferencia</button>
+          <button class="button" (click)="exit()">Salir</button>
+
+        </div>
+    </div>
+</div>
